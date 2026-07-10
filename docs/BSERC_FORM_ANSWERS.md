@@ -12,7 +12,7 @@
 
 | Field | Value |
 |---|---|
-| Full Name * | **Aman Raj** |
+| Full Name * | **Aman Jaiswal** *(BSERC-18384 Applicant ID intern)* |
 | Email ID (Primary) * | **aman.raj.intern@bserc.org** |
 | Alternative Email ID | **amanraj.dev@gmail.com** |
 | Mobile / WhatsApp Number (optional) | **+91-XXXXXXXXXX** |

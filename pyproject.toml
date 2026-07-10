@@ -9,10 +9,10 @@ description = "OSCAR — Open-Source Conflict Analysis & Reporting. OSINT-Powere
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
-  { name = "BSERC Intern", email = "intern@example.com" },
+  { name = "Aman Jaiswal (BSERC-18384)", email = "aman.raj.intern@bserc.org" },
 ]
 maintainers = [
-  { name = "BSERC Intern", email = "intern@example.com" },
+  { name = "Aman Jaiswal (BSERC-18384)", email = "aman.raj.intern@bserc.org" },
 ]
 keywords = [
   "osint",
@@ -126,7 +126,7 @@ oscar = "src.cli:main"
 name = "oscar"
 version = "0.1.1"
 description = "OSCAR — Open-Source Conflict Analysis & Reporting"
-authors = ["BSERC Intern <intern@example.com>"]
+authors = ["Aman Jaiswal (BSERC-18384) <aman.raj.intern@bserc.org>"]
 
 [tool.black]
 line-length = 100

@@ -9,7 +9,7 @@
 
 ## 1. Personal and Institutional Details
 
-- **Full Name:** Aman Raj
+- **Full Name:** Aman Jaiswal (BSERC-18384 Applicant ID intern)
 - **Email ID (Primary):** aman.raj.intern@bserc.org
 - **Alternative Email ID:** amanraj.dev@gmail.com
 - **Mobile / WhatsApp:** +91-XXXXXXXXXX
@@ -84,7 +84,7 @@ I hereby declare that:
 - I understand that BSERC reserves the right to remove the listing in case of dispute, and that BSERC shall not be held liable for any consequences arising from publication, use, or collaboration related to this project.
 
 **Submitted:** 30 July 2026  
-**Signature:** Aman Raj, BSERC Def-Space Intern 2026
+**Signature:** Aman Jaiswal (BSERC-18384), BSERC Def-Space Intern 2026
 
 ---
 
