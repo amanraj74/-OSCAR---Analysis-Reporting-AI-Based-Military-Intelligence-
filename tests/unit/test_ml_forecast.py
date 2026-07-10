@@ -6,7 +6,7 @@ import pandas as pd
 import pytest
 
 
-@pytest.fixture
+@pytest.fixture()
 def sample_series() -> pd.Series:
     dates = pd.date_range("2025-01-01", periods=30, freq="D")
     import numpy as np

@@ -7,7 +7,7 @@ import pandas as pd
 import pytest
 
 
-@pytest.fixture
+@pytest.fixture()
 def synthetic_matrix(tmp_path):
     from src.ml.features import build_feature_matrix
 

@@ -7,7 +7,7 @@ import pandas as pd
 import pytest
 
 
-@pytest.fixture
+@pytest.fixture()
 def sample_features() -> pd.DataFrame:
     dates = pd.date_range("2025-01-01", periods=60, freq="D")
     rows = []

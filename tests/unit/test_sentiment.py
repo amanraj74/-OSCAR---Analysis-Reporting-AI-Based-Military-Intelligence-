@@ -131,7 +131,7 @@ def test_result_is_positive_property() -> None:
     assert r.is_negative is False
 
 
-@pytest.mark.integration
+@pytest.mark.integration()
 def test_transformer_backend_integration() -> None:
     """Integration test for DistilBERT. Requires model download; slow.
 

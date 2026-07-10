@@ -26,13 +26,13 @@ def _isolate_env(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> Iterator[No
     reset_settings_cache()
 
 
-@pytest.fixture
+@pytest.fixture()
 def tmp_db_path(tmp_path: Path) -> Path:
     """Return a unique tmp DB path."""
     return tmp_path / "test.db"
 
 
-@pytest.fixture
+@pytest.fixture()
 def fresh_db(tmp_db_path: Path, monkeypatch: pytest.MonkeyPatch) -> Iterator[Path]:
     """Create a fresh OSCAR schema in a tmp SQLite DB.
 
@@ -49,7 +49,7 @@ def fresh_db(tmp_db_path: Path, monkeypatch: pytest.MonkeyPatch) -> Iterator[Pat
     reset_settings_cache()
 
 
-@pytest.fixture
+@pytest.fixture()
 def sample_gdelt_line() -> str:
     """A single valid GDELT 2.0 tab-delimited event line (61 columns, dated today UTC).
 
@@ -89,7 +89,7 @@ def sample_gdelt_line() -> str:
     return "\t".join(cols)
 
 
-@pytest.fixture
+@pytest.fixture()
 def sample_gdelt_bytes(sample_gdelt_line: str) -> bytes:
     """Raw GDELT payload (uncompressed tab-delimited text)."""
     return sample_gdelt_line.encode("utf-8")

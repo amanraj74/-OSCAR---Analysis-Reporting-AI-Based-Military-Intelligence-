@@ -3,7 +3,7 @@
 These tests verify the full pipeline works:
     seed → ingest → transform → NLP → ML → dashboard loaders
 
-Marked `@pytest.mark.e2e` so they don't run by default.
+Marked `@pytest.mark.e2e()` so they don't run by default.
 Run explicitly: `pytest -m e2e tests/e2e/`.
 
 These tests are designed to be hermetic — they use a temp directory and
@@ -33,7 +33,7 @@ def _run_seed_demo(db_path: Path) -> None:
     assert rc == 0, f"seed_demo.main() returned {rc}"
 
 
-@pytest.fixture
+@pytest.fixture()
 def seeded_db(tmp_path, monkeypatch):
     """Seed a fresh DB for this test. Function-scoped for isolation."""
     db_path = tmp_path / "demo.db"
@@ -57,7 +57,7 @@ def seeded_db(tmp_path, monkeypatch):
     reset_settings_cache()
 
 
-@pytest.mark.e2e
+@pytest.mark.e2e()
 def test_seed_populates_all_tables(seeded_db) -> None:
     """All 8 tables should have rows after seeding."""
     from sqlalchemy import create_engine, text
@@ -81,7 +81,7 @@ def test_seed_populates_all_tables(seeded_db) -> None:
             assert count >= min_count, f"Expected >= {min_count} rows in {table}, got {count}"
 
 
-@pytest.mark.e2e
+@pytest.mark.e2e()
 def test_nlp_pipeline_runs_against_seeded_data(seeded_db) -> None:
     """NER pipeline extracts entities from seeded articles."""
     from src.config import reset_settings_cache
@@ -102,7 +102,7 @@ def test_nlp_pipeline_runs_against_seeded_data(seeded_db) -> None:
     assert "SU-35" in weapon_texts
 
 
-@pytest.mark.e2e
+@pytest.mark.e2e()
 def test_ml_pipeline_builds_and_scores(seeded_db) -> None:
     """End-to-end ML: features → classifier → score."""
     from datetime import datetime, timezone
@@ -151,7 +151,7 @@ def test_ml_pipeline_builds_and_scores(seeded_db) -> None:
     assert (proba <= 1).all()
 
 
-@pytest.mark.e2e
+@pytest.mark.e2e()
 def test_dashboard_data_loaders_work_with_seeded_data(seeded_db) -> None:
     """All dashboard data loaders return non-empty DataFrames after seeding."""
     from src.config import reset_settings_cache
@@ -187,7 +187,7 @@ def test_dashboard_data_loaders_work_with_seeded_data(seeded_db) -> None:
     assert "label" in topics.columns
 
 
-@pytest.mark.e2e
+@pytest.mark.e2e()
 def test_dashboard_pages_can_be_loaded(seeded_db) -> None:
     """All dashboard page modules import without errors against seeded data."""
     for name in [
@@ -201,3 +201,4 @@ def test_dashboard_pages_can_be_loaded(seeded_db) -> None:
     ]:
         mod = importlib.import_module(f"dashboard.pages.{name}")
         assert mod is not None
+
