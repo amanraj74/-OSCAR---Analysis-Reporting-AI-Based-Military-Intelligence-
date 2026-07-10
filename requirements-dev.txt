@@ -1,0 +1,26 @@
+-r requirements.txt
+
+pytest>=8.2.2,<9.0.0
+pytest-cov>=5.0.0,<6.0.0
+pytest-mock>=3.14.0,<4.0.0
+pytest-asyncio>=0.23.7,<1.0.0
+
+black>=24.4.2,<25.0.0
+isort>=5.13.2,<6.0.0
+ruff>=0.5.4,<1.0.0
+mypy>=1.10.1,<2.0.0
+bandit[toml]>=1.7.9,<2.0.0
+
+pre-commit>=3.7.1,<4.0.0
+detect-secrets>=1.5.0,<2.0.0
+
+jupyter>=1.0.0,<2.0.0
+ipykernel>=6.29.5,<7.0.0
+
+types-requests>=2.32.0,<3.0.0
+types-PyYAML>=6.0.12,<7.0.0
+types-beautifulsoup4>=4.12.0,<5.0.0
+
+vcrpy>=6.0.1,<7.0.0
+responses>=0.25.0,<1.0.0
+freezegun>=1.5.1,<2.0.0

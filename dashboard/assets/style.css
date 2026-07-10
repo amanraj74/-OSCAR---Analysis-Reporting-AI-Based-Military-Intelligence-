@@ -1,0 +1,192 @@
+/* ============================================================
+   OSCAR Dashboard — Clean Professional Design System
+   Palette: navy / slate / muted accent
+   Type: system stack (Inter / Segoe UI / system-ui)
+   ============================================================ */
+
+:root {
+    --primary: #1e293b;        /* slate-800 */
+    --primary-hover: #0f172a;  /* slate-900 */
+    --accent: #3b82f6;         /* blue-500 */
+    --accent-soft: #dbeafe;     /* blue-100 */
+    --success: #10b981;        /* emerald-500 */
+    --warning: #f59e0b;        /* amber-500 */
+    --danger:  #ef4444;        /* red-500 */
+    --bg:       #f8fafc;        /* slate-50 */
+    --surface:  #ffffff;
+    --border:   #e2e8f0;        /* slate-200 */
+    --text:     #0f172a;        /* slate-900 */
+    --text-mute:#64748b;        /* slate-500 */
+    --text-soft:#94a3b8;        /* slate-400 */
+    --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.04);
+    --shadow-md: 0 4px 12px -2px rgb(15 23 42 / 0.08);
+    --radius:    8px;
+}
+
+/* ---------- Base layout ---------- */
+.main .block-container {
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+    max-width: 1280px;
+}
+
+body, .stApp {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+}
+
+/* ---------- Header ---------- */
+h1 {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+h2 {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+}
+h3 {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"] {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: var(--primary);
+    border: none;
+    padding: 0;
+}
+
+/* ---------- Metric cards ---------- */
+[data-testid="stMetric"] {
+    background: var(--surface);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s ease;
+}
+[data-testid="stMetric"]:hover {
+    box-shadow: var(--shadow-md);
+}
+[data-testid="stMetricLabel"] {
+    color: var(--text-mute);
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+[data-testid="stMetricValue"] {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+[data-testid="stMetricDelta"] {
+    color: var(--text-mute);
+    font-size: 0.8rem;
+}
+
+/* ---------- Buttons ---------- */
+.stButton > button,
+.stDownloadButton > button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: background 0.15s ease;
+}
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background: #2563eb;
+}
+
+/* ---------- Inputs ---------- */
+.stTextInput input,
+.stTextArea textarea,
+.stNumberInput input,
+.stSelectbox [data-baseweb="select"] {
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+.stTextInput input:focus,
+.stTextArea textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+/* ---------- Sliders ---------- */
+.stSlider [data-testid="stSliderValueLabel"] {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ---------- Tabs ---------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.stTabs [data-baseweb="tab"] {
+    padding: 0.5rem 1rem;
+    color: var(--text-mute);
+    font-weight: 500;
+}
+.stTabs [aria-selected="true"] {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+/* ---------- Tables / DataFrames ---------- */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+/* ---------- Code blocks ---------- */
+code, pre {
+    font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+    background: #f1f5f9 !important;
+    color: var(--primary) !important;
+    border-radius: 4px;
+}
+
+/* ---------- Alerts (info/warning/error) ---------- */
+.stAlert {
+    border-radius: var(--radius);
+    border: none;
+}
+
+/* ---------- Divider ---------- */
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1rem 0;
+}
+
+/* ---------- Hide default decorations we don't want ---------- */
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+header[data-testid="stHeader"] {
+    background: transparent;
+}

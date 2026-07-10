@@ -1,0 +1,75 @@
+# OS-specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Project: data, models, logs (mounted as volumes in compose)
+data/raw/
+data/processed/
+data/oscar.db
+data/*.db
+data/*.sqlite
+data/*.parquet
+!data/.gitkeep
+!data/README.md
+models/checkpoints/
+models/experiments/
+models/registry/
+mlruns/
+mlflow.db
+logs/
+*.log
+
+# Secrets / env
+.env
+.streamlit/secrets.toml
+configs/secrets/
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+.cursor/
+
+# OS junk
+tmp/
+temp/
+.cache/
+.pytest_tempdir/
+
+# Test artifacts
+tests/fixtures/*/output/
+test_*.html
+
+# Docs build (if any)
+docs/_build/
+site/
+
+# Docker
+Dockerfile.bak
+docker-compose.override.yml

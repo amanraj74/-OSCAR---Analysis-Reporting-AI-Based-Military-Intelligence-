@@ -1,0 +1,66 @@
+name: oscar
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: oscar:latest
+    container_name: oscar-app
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    environment:
+      APP_ENV: production
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////data/oscar.db}
+      NEWS_API_KEY: ${NEWS_API_KEY:-}
+      GDELT_BATCH_HOURS_BACK: ${GDELT_BATCH_HOURS_BACK:-24}
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      MLFLOW_EXPERIMENT_NAME: oscar
+    volumes:
+      - oscar-data:/data
+      - oscar-models:/app/models
+      - oscar-logs:/logs
+    depends_on:
+      mlflow:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    container_name: oscar-mlflow
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      MLFLOW_BACKEND_STORE_URI: sqlite:///mlflow/mlflow.db
+    volumes:
+      - oscar-mlflow:/mlflow
+    command: >
+      mlflow server
+        --host 0.0.0.0
+        --port 5000
+        --backend-store-uri sqlite:///mlflow/mlflow.db
+        --default-artifact-root /mlflow/artifacts
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  oscar-data:
+    name: oscar-data
+  oscar-models:
+    name: oscar-models
+  oscar-logs:
+    name: oscar-logs
+  oscar-mlflow:
+    name: oscar-mlflow
