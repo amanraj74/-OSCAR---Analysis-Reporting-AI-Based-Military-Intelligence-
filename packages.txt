@@ -1,0 +1,8 @@
+# Streamlit Community Cloud — system packages to install via apt-get
+# One package per line. Used by Streamlit Cloud's build step.
+# Required for spaCy (libxml/libxslt), matplotlib (libgl), and lxml.
+build-essential
+libxml2-dev
+libxslt1-dev
+libgl1
+libglib2.0-0
