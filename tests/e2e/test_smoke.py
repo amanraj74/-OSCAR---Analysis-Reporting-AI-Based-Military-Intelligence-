@@ -201,4 +201,3 @@ def test_dashboard_pages_can_be_loaded(seeded_db) -> None:
     ]:
         mod = importlib.import_module(f"dashboard.pages.{name}")
         assert mod is not None
-
