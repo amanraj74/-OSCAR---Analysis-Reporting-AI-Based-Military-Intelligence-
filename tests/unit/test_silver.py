@@ -13,7 +13,7 @@ from src.persistence.models import Article, Event
 from src.transform.silver import build_all_silver, build_articles_silver, build_events_silver
 
 
-@pytest.fixture
+@pytest.fixture()
 def seeded_db(fresh_db):
     """Seed the DB with a small known set of events + articles."""
     events = [

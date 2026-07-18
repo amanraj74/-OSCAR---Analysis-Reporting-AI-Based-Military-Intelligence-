@@ -8,7 +8,7 @@ from pathlib import Path
 import pytest
 
 
-@pytest.fixture
+@pytest.fixture()
 def tmp_registry(tmp_path) -> Path:
     return tmp_path
 

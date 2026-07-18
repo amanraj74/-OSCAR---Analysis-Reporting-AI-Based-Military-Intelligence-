@@ -1,10 +1,15 @@
 # OSCAR — Full Project Report
 
 > **Project:** Open-Source Conflict Analysis & Reporting (OSCAR)
+
 > **Domain:** AI-Based Military Intelligence and Threat Analysis Dashboard using ML and Data Analytics
+
 > **Intern:** Aman Jaiswal — BSERC-18384 Applicant ID intern
+
 > **Programme:** BSERC Def-Space Summer Internship 2026
+
 > **Duration:** 19 June — 30 July 2026
+
 > **Stack:** Python 3.10 / 3.11 / 3.12 · Streamlit · SQLAlchemy · scikit-learn · XGBoost · spaCy · HuggingFace · MLflow
 
 ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![tests](https://img.shields.io/badge/tests-213%20passed-brightgreen) ![coverage](https://img.shields.io/badge/coverage-68.59%25-yellow) ![status](https://img.shields.io/badge/status-v0.1.1--production--ready-blue) ![intern](https://img.shields.io/badge/intern-BSERC--18384-orange) ![programme](https://img.shields.io/badge/programme-Def--Space%20Internship%202026-blueviolet)
@@ -865,4 +870,4 @@ The next chapter is yours.
 **Project:** [github.com/amanraj74/-OSCAR---Analysis-Reporting-AI-Based-Military-Intelligence-](https://github.com/amanraj74/-OSCAR---Analysis-Reporting-AI-Based-Military-Intelligence-)
 **Author:** Aman Jaiswal · BSERC-18384 · Def-Space Summer Intern 2026
 **License:** MIT
-**Contact:** aman.raj.intern@bserc.org
+**Contact:** aerraj50@gmail.com
